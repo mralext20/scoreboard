@@ -1,0 +1,25 @@
+{%extends "layout.html" %}
+
+{%block content %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Score</th>
+      <th>Achiver</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for game in games%}
+    <tr>
+      <td scope="row">
+        <{{game.name}}/td> <td>{{game.highscore}}
+      </td>
+      <td>{{game.highscore_achiver}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
+{%endblock%}

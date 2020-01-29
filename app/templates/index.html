@@ -14,9 +14,12 @@
     {%for game in games%}
     <tr>
       <td scope="row">
-        <{{game.name}}/td> <td>{{game.highscore}}
+        {{game.name}}
       </td>
-      <td>{{game.highscore_achiver}}</td>
+      <td>
+        {{game.highscore}}
+      </td>
+      <td>{{game.highscore_aciver }}</td>
     </tr>
     {%endfor%}
   </tbody>

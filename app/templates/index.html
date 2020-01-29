@@ -14,7 +14,12 @@
     {%for game in games%}
     <tr>
       <td scope="row">
+        {% if game.url is not none %}
+        <a href="{{game.url}}">{{game.name}}</a>
+        {%else%}
         {{game.name}}
+        {% endif %}
+
       </td>
       <td>
         {{game.highscore}}

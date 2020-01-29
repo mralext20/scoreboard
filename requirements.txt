@@ -4,3 +4,5 @@ Flask-BS4
 Flask-sqlalchemy
 flask-migrate
 gunicorn
+
+psycopg2

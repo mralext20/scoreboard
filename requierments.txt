@@ -1,3 +1,5 @@
 flask
 flask-wtf
 Flask-BS4
+Flask-sqlalchemy
+flask-migrate

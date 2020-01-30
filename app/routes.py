@@ -15,7 +15,7 @@ def index():
 @app.route('/create', methods=['GET', 'POST'])
 def create_game():
     form = GameAddForm()
-    if form.validate_on_submit():
+    if form.validate_on_submit() and form.password.data == app.config['PASSWORD_KEY']:
         flash(f'creating Game {form.game.data}')
         game = Game(name=form.game.data, url=form.url.data)
         db.session.add(game)
@@ -28,7 +28,7 @@ def create_game():
 @app.route('/update', methods=['GET', 'POST'])
 def update_game():
     form = GameDataForm()
-    if form.validate_on_submit():
+    if form.validate_on_submit() and form.password.data == app.config['PASSWORD_KEY']:
         game = Game.query.filter_by(name=form.game.data).one_or_none()
         if game is None:
             flash(f"failed to update game, game {form.game.data} does not exist")

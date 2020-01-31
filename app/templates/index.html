@@ -14,7 +14,7 @@
     {%for game in games%}
     <tr>
       <td scope="row">
-        {% if game.url is not none %}
+        {% if game.url != "" %}
         <a href="{{game.url}}">{{game.name}}</a>
         {%else%}
         {{game.name}}
